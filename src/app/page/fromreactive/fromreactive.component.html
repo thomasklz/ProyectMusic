@@ -1,0 +1,58 @@
+<div class="container mt-3">
+    <div class="input-group mb-3">
+        <input value="Don omar" #buscar type="text" class="form-control" placeholder="Buscar por artista...">
+        <button (click)="searchMusic(buscar)" class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+      </div>
+</div>
+
+<!-- <div class="text-center">
+  <span data-bs-toggle="modal" 
+  data-bs-target="#staticBackdrop" (click)="getTrack(item.id)"  class="badge text-bg-danger" *ngFor="let item of album">{{ item.title }}</span>
+</div> -->
+
+<div class="text-center">
+  <span data-bs-toggle="modal" 
+  data-bs-target="#staticBackdrop" (click)="getTrack(item.id)"  class="badge text-bg-danger" *ngFor="let item of arryNuevoALbum">{{ item }}</span>
+</div>
+<br><br>
+<div class="card" style="width: 18rem;" *ngFor="let item of musicas">
+    <img src="{{ item.album.cover }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Canción: {{ item.title_short }}</h5>
+      <p class="card-text">Tiempo: {{ item.duration/60 }} minutos</p>
+      <a href="#" class="btn btn-primary">Track: {{ item.link }}</a>
+    </div>
+  </div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card" style="width: 18rem;" *ngFor="let item of track">
+         <h1>
+          
+          <audio controls >
+            <source src="{{ item.preview }}">
+          </audio>
+      </h1>
+          <div class="card-body">
+            <p class="card-text">{{ item.title }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
