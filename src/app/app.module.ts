@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FromreactiveComponent } from './page/fromreactive/fromreactive.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './page/card/card.component';
  
 
 @NgModule({
   declarations: [
     AppComponent,
-    FromreactiveComponent
+    FromreactiveComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,

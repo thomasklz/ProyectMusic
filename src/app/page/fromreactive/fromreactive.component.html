@@ -15,17 +15,9 @@
   data-bs-target="#staticBackdrop" (click)="getTrack(item.id)"  class="badge text-bg-danger" *ngFor="let item of arryNuevoALbum">{{ item }}</span>
 </div>
 <br><br>
-<div class="card" style="width: 18rem;" *ngFor="let item of musicas">
-    <img src="{{ item.album.cover }}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Canción: {{ item.title_short }}</h5>
-      <p class="card-text">Tiempo: {{ item.duration/60 }} minutos</p>
-      <a href="#" class="btn btn-primary">Track: {{ item.link }}</a>
-    </div>
-  </div>
 
 
-
+<app-card [music]="musicas" ></app-card>
 
 
 <!-- Modal -->
